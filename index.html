@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Learning Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .hero-section {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-section:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+
+        .hero-button {
+            background-color: white;
+            color: #2575fc;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .hero-button:hover {
+            background-color: #2575fc;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .course-card {
+            background: white;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .details-page {
+            background: #fff;
+            padding: 50px;
+            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .details-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .details-title {
+            color: #6a11cb;
+        }
+
+        .details-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .btn-back {
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #6a11cb;
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function showDetails(title, description, imageUrl) {
+            const container = document.createElement('div');
+            container.className = 'details-page container';
+            container.innerHTML = `
+                <div>
+                    <img src="${imageUrl}" alt="${title}" class="details-image">
+                    <h1 class="details-title">${title}</h1>
+                    <p class="details-description">${description}</p>
+                    <button class="btn btn-back" onclick="window.location.reload()">Back to Courses</button>
+                </div>
+            `;
+            document.body.innerHTML = '';
+            document.body.appendChild(container);
+        }
+    </script>
+</head>
+<body>
+    <!-- Landing Page -->
+    <section class="hero-section">
+        <h1>Welcome to Your Learning Platform</h1>
+        <p>Empowering your learning journey with interactive tools and resources.</p>
+        <a href="#courses" class="btn hero-button btn-lg">Explore Courses</a>
+    </section>
+
+    <!-- Courses Page -->
+    <section id="courses" class="container my-5">
+        <h2 class="text-center mb-4">Available Courses</h2>
+        <div class="row g-4">
+            <!-- Course Cards -->
+            <div class="col-md-4">
+                <div class="card course-card">
+                    <img src="python.png" class="card-img-top" alt="Python Course">
+                    <div class="card-body">
+                        <h5 class="card-title">Python Programming</h5>
+                        <p class="card-text">Learn Python from scratch and master the language with hands-on projects.</p>
+                        <button class="btn btn-primary" onclick="showDetails('Python Programming', 'Learn Python from scratch and master the language with hands-on projects.Welcome to the Python Programming Course! Whether you are a beginner or looking to enhance your Python skills, the course is designed to guide you through Python key features and applications. Python is one of the most popular and versatile programming languages, and this course will teach you how to leverage it for a wide range of tasks from basic scripting to advanced data analysis and web development.<br> <a href=https://youtu.be/_uQrJ0TkZlc?si=cd8NVTMKJs5pK27O target=_blank>VIDEO SOURCE</a>' , 'https://miro.medium.com/v2/resize:fit:1200/1*9PxpGrdJ5e-8uhb7hlvKGA.png')">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card course-card">
+                    <img src="java.png" class="card-img-top" alt="Java Course">
+                    <div class="card-body">
+                        <h5 class="card-title">Java Programming</h5>
+                        <p class="card-text">Master Java for web and mobile development with comprehensive modules.</p>
+                        <button class="btn btn-primary" onclick="showDetails('Java Programming', 'Master Java for web and mobile development with comprehensive modules Welcome to the Java Programming Course! Java is one of the most widely used and versatile programming languages in the world, known for its portability, scalability, and rich ecosystem. This course is designed to guide you through Java key features and help you build a solid foundation for both beginner and intermediate programmers.<br> <a href=https://youtu.be/xTtL8E4LzTQ?si=vr5jUhjcMO38FKyd target=_blank>VIDEO SOURCE</a>', 'https://miro.medium.com/v2/resize:fit:800/0*CcsFuPYjrjnAvR1S.png')">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card course-card">
+                    <img src="data.png" class="card-img-top" alt="Data Science Course">
+                    <div class="card-body">
+                        <h5 class="card-title">Data Science</h5>
+                        <p class="card-text">Dive into data analysis, visualization, and machine learning techniques.</p>
+                        <button class="btn btn-primary" onclick="showDetails('Data Science', 'Dive into data analysis, visualization, and machine learning techniques Data Science is one of the most in-demand fields today, as companies increasingly rely on data-driven decisions to drive growth and innovation. This course is designed to equip you with the essential skills and tools needed to become a proficient data scientist. Whether you are a beginner or looking to enhance your existing skills the course will help you learn how to analyze and visualize and interpret complex data using popular data science tools and techniques.<br> <a href=https://youtu.be/-ETQ97mXXF0?si=iTqHWVeXJdv5JjmK target=_blank>VIDEO SOURCE</a>', 'https://miro.medium.com/v2/resize:fit:1400/1*SNO6vl3QBvtOB-B7vxG8Yg.png')">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card course-card">
+                    <img src="c.png" class="card-img-top" alt="Programming in C">
+                    <div class="card-body">
+                        <h5 class="card-title">Programming in C</h5>
+                        <p class="card-text">Learn the foundational language for system programming and algorithms.</p>
+                        <button class="btn btn-primary" onclick="showDetails('Programming in C', 'Learn the foundational language for system programming and algorithms.C is a powerful, efficient, and versatile language that forms the backbone of many modern programming languages and software systems.Whether you are a beginner looking to start your programming journey or an experienced developer wanting to deepen your understanding of C The course is designed to provide a comprehensive foundation in C programming.<br> <a href=https://youtu.be/KJgsSFOSQv0?si=caCU0e-1vmifWQDv target=_blank>VIDEO SOURCE</a>', 'https://www.startertutorials.com/blog/wp-content/uploads/2016/10/C-Programming-tutorial-for-beginners-banner.png')">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card course-card">
+                    <img src="dj.jpg" class="card-img-top" alt="DSA in Java">
+                    <div class="card-body">
+                        <h5 class="card-title">DSA in Java</h5>
+                        <p class="card-text">Master Data Structures and Algorithms with in-depth Java tutorials.</p>
+                        <button class="btn btn-primary" onclick="showDetails('DSA in Java', 'Master Data Structures and Algorithms with in-depth Java tutorials This introduction video provides an overview of the Data Structures and Algorithms in Java course. Watch it to get an understanding of what you will learn the course structure, and how mastering data structures and algorithms can boost your coding skills.<br> <a href=https://youtu.be/OWCao3Ul6n4?si=UozbmhF3oehaj5rn target=_blank>VIDEO SOURCE</a> ', 'https://notedinsights.com/wp-content/uploads/2023/09/image-1.png')">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card course-card">
+                    <img src="dc.jpg" class="card-img-top" alt="DSA in C">
+                    <div class="card-body">
+                        <h5 class="card-title">DSA in C</h5>
+                        <p class="card-text">Understand algorithms and data structures through practical C programming.</p>
+                        <button class="btn btn-primary" onclick="showDetails('DSA in C', 'Understand algorithms and data structures through practical C programming.Data Structures and Algorithms in C Course! This course is designed for students and professionals who want to dive deep into data structures and algorithms (DSA) using the C programming language. Mastering data structures and algorithms is essential for solving complex programming problems, optimizing solutions, and excelling in coding interviewsIn  course we’ll explore fundamental data structures like arrays, linked lists, stacks, queues, trees, graphs, and hash tables and also learning the algorithms that operate on them, such as sorting, searching, and graph traversal. By the end of the course, you’ll be proficient in using C to implement key data structures and solve algorithmic challenges effectively.<br> <a href=https://youtu.be/MtVZAXepMPM?si=Lxbtgn3TJo5j1Pak target=_blank>VIDEO SOURCE</a>', 'https://learnerbits.com/wp-content/uploads/2023/06/dsa.png')">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
