@@ -8,5 +8,5 @@ Created an intuitive, user-friendly interface that makes learning accessible any
 Gained hands-on experience in front-end development and honed my skills in web design and coding.
 This project helped me grow as a web developer, and I’m excited for what’s next! 🚀 #WebDevelopment #HTML #CSS #JavaScript #Bootstrap #ResponsiveDesign #Internship #TechSkills #FrontEndDevelopment"
 
-Iam and My friend Akilan made it
+Iam and My friend ARUN PRASATH made it
 Thank you CoderOne
